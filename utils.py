@@ -5,6 +5,13 @@ import math
 def problem(x):
     return x*x*x + x*x + x + 1
 
+def constructReferenceImage():
+    width = 256
+    height = 256
+    x = []
+    for i in range(width):
+        x.append(0.5 *  1.0 / (width - 1))
+
 def targetFunction(x):
     return x*x*x
 
