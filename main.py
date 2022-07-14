@@ -1,12 +1,10 @@
-def problem(x):
-    return x*x*x + x*x + x + 1
+# %% Resampled Importance Sampling
+import utils
+import numpy as np
 
-def targetFunction(x):
-    return x*x*x
-
-def analyticalIntegral(x):
-    return 0.25 * x*x*x*x + x*x*x/3.0 + 0.5 * x*x + x
-
-def integralOverDomain(a, b):
-    return analyticalIntegral(min(a, b)) - analyticalIntegral(max(a, b))
-
+print("Hello, RIS")
+x, y = np.meshgrid(np.linspace(-2,2,200), np.linspace(-2,2,200))
+x, y = x - x.mean(), y - y.mean()
+z = x * np.exp(-x**2 - y**2)
+utils.display2DArray(z)
+# %%
